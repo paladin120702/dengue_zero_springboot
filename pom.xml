@@ -53,12 +53,17 @@
 		</dependency>
 		
 		<dependency>
-    		<groupId>mysql</groupId>
-    		<artifactId>mysql-connector-java</artifactId>
-    		<version>8.0.33</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
+		
+		<dependency>
+ 			<groupId>mysql</groupId>
+ 			<artifactId>mysql-connector-java</artifactId>
+ 			<version>8.0.19</version>
+ 		</dependency> 
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -67,5 +72,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
