@@ -15,9 +15,6 @@ import java.util.List;
 public class FirebaseAuthenticationFilter extends OncePerRequestFilter {
 
     private static final List<String> PUBLIC_URLS = List.of(
-            "/login",
-            "/register",
-            "/public",
             "/h2-console"
     );
 
@@ -40,7 +37,7 @@ public class FirebaseAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-        String idToken = header.replace("Bearer ", "");
+        String idToken = header.replace("Bearer ", "").trim();
 
         try {
             FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(idToken);
