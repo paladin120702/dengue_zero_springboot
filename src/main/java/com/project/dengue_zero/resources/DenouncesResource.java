@@ -55,7 +55,26 @@ public class DenouncesResource {
 	    }
 	}
 	
-	@GetMapping
+	@GetMapping("/user")
+    public ResponseEntity<?> getAllDenouncesByUser(@RequestHeader("Authorization") String authorization) {
+        try {
+            String token = authorization.replace("Bearer ", "");
+            FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(token);
+            String uid = decodedToken.getUid();
+
+            User user = repository.findById(uid)
+                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+            List<Denounces> userDenounces = service.findAllByUser(user);
+            return ResponseEntity.ok(userDenounces);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(401)
+                    .body("Token inválido ou erro ao buscar denúncias: " + e.getMessage());
+        }
+    }
+	
+	@GetMapping("/all")
 	public ResponseEntity<List<Denounces>> findAll() {
 		List<Denounces> list = service.findAll();
 		return ResponseEntity.ok().body(list);

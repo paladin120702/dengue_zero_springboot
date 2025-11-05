@@ -25,6 +25,10 @@ public class DenouncesService {
 	    return repository.save(denounce);
 	}
 	
+	public List<Denounces> findAllByUser(User user) {
+        return repository.findByClient(user);
+	}
+	
 	public List<Denounces> findAll() {
 		return repository.findAll();
 	}
