@@ -27,7 +27,6 @@ O objetivo do Dengue Zero é auxiliar no acompanhamento, conscientização e mon
 O projeto foi desenvolvido utilizando:
 
 - Arquitetura MVC
-- APIs RESTful
 - Integração entre Frontend Flutter e Backend Java
 - Princípios SOLID
 - Estrutura modular e escalável
