@@ -1,6 +1,6 @@
 # Dengue Zero - Backend
 
-Backend da aplicação Dengue Zero, responsável pelo gerenciamento dos dados da aplicação mobile, integração com Firebase Authentication, armazenamento de imagens e gerenciamento de casos de dengue através de APIs REST.
+Backend da aplicação Dengue Zero, responsável pelo gerenciamento dos dados da aplicação mobile, integração com Firebase Authentication e gerenciamento de casos de dengue através de APIs REST.
 
 ---
 
