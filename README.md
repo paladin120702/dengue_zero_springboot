@@ -118,6 +118,18 @@ O backend valida o token do firebase, extrai o token e pega os dados como nome e
 
 # Endpoints da API
 
+> Todas as requisições protegidas precisam enviar o token JWT do Firebase no header Authorization.
+
+## Header de Autenticação
+
+```http
+Authorization: Bearer SEU_TOKEN_FIREBASE
+```
+
+O token é gerado após o login com Google no Firebase Authentication realizado pelo aplicativo Flutter.
+
+---
+
 ## Autenticação
 
 ### Validar Token Firebase
