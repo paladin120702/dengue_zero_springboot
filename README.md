@@ -104,7 +104,7 @@ firebase.credentials=COLOCA_AQUI_O_PATH_DO_FIREBASE_SERVICE_ACCOUNT
 
 O backend valida o token do firebase, extrai o token e pega os dados como nome e e-mail armazena no banco de dados da tabela de usuários, seguidamente pode fazer 3 requisições um POST para criar uma denúncia, um GET para exibir as denúncias e um GET para exibir as denúncias por usuário.
 
-## Fluxo da autenticação
+# Fluxo da autenticação
 
 1. O Firebase gera um token de autenticação do usuário.
 2. O Flutter envia esse token para o backend Java.
