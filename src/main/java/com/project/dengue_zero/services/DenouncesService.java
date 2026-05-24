@@ -1,6 +1,8 @@
 package com.project.dengue_zero.services;
 
 import java.util.List;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.project.dengue_zero.dto.DenouncesDTO;
@@ -14,9 +16,9 @@ public class DenouncesService {
 	@Autowired
 	private DenouncesRepository repository;
 	
-	public Denounces createDenounce(DenouncesDTO dto, User user) {
+	public Denounces createDenounce(@NonNull DenouncesDTO dto, User user) {
 		Denounces denounce = new Denounces();
-	    denounce.setTitulo(dto.getTitulo());
+	    denounce.setTitle(dto.getTitle());
 	    denounce.setImgUrl(dto.getImgUrl());
 	    denounce.setLatitude(dto.getLatitude());
 	    denounce.setLongitude(dto.getLongitude());

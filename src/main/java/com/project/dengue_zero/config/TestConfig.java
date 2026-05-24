@@ -21,7 +21,7 @@ public class TestConfig implements CommandLineRunner {
 	private DenouncesRepository denouncesRepository;
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		
 		User u1 = new User("u1", "Arthur Morgan", "arthurmorgan@gmail.com");
 		User u2 = new User("u2", "Jhon Marston", "jhonmarston@gmail.com");

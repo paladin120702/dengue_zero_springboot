@@ -1,5 +1,6 @@
 package com.project.dengue_zero.entities;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 import jakarta.persistence.Entity;
@@ -14,27 +15,28 @@ import jakarta.persistence.Table;
 @Table(name = "tb_denounces")
 public class Denounces implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
+	@Serial
+    private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String titulo;
+	private String title;
 	private String imgUrl;
 	private String latitude;
 	private String longitude;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
-	
+
 	public Denounces() {
 	}
-	
-	public Denounces(Long id, String titulo, String imgUrl, String latitude, String longitude, User client) {
+
+	public Denounces(Long id, String title, String imgUrl, String latitude, String longitude, User client) {
 		super();
 		this.id = id;
-		this.titulo = titulo;
+		this.title = title;
 		this.imgUrl = imgUrl;
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -49,12 +51,12 @@ public class Denounces implements Serializable {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getImgUrl() {
@@ -80,7 +82,7 @@ public class Denounces implements Serializable {
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	
+
 	public User getClient() {
 		return client;
 	}

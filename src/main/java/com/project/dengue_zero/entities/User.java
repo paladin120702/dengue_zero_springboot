@@ -1,5 +1,6 @@
 package com.project.dengue_zero.entities;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,53 +15,54 @@ import jakarta.persistence.Table;
 @Table(name = "tb_users")
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 
 	@Id
-    private String uid;
-    private String name;
-    private String email;
-    
-    @JsonIgnore
-    @OneToMany(mappedBy = "client")
-    private List<Denounces> denounces = new ArrayList<>();
+	private String uid;
+	private String name;
+	private String email;
 
-    public User() {
-    }
+	@JsonIgnore
+	@OneToMany(mappedBy = "client")
+	private List<Denounces> denounces = new ArrayList<>();
 
-    public User(String uid, String name, String email) {
-        this.uid = uid;
-        this.name = name;
-        this.email = email;
-    }
+	public User() {
+	}
 
-    public String getUid() {
-    	return uid; 
-    }
-    
-    public void setUid(String uid) {
-    	this.uid = uid; 
-    }
+	public User(String uid, String name, String email) {
+		this.uid = uid;
+		this.name = name;
+		this.email = email;
+	}
 
-    public String getName() {
-    	return name; 
-    }
-    
-    public void setName(String name) {
-    	this.name = name; 
-    }
-   
-    public String getEmail() {
-    	return email; 
-    }
-    
-    public void setEmail(String email) {
-    	this.email = email; 
-    }
-    
+	public String getUid() {
+		return uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public List<Denounces> getDenounces() {
 		return denounces;
-	} 
+	}
 
 	@Override
 	public int hashCode() {
@@ -77,5 +79,5 @@ public class User implements Serializable {
 			return false;
 		User other = (User) obj;
 		return Objects.equals(uid, other.uid);
-	}  
+	}
 }

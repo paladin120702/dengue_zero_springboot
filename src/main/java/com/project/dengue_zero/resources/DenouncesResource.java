@@ -37,7 +37,7 @@ public class DenouncesResource {
 	        
 	        User user = repository.findById(uid).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
-	        if (denounceDTO.getTitulo() == null || denounceDTO.getTitulo().isBlank()) {
+	        if (denounceDTO.getTitle() == null || denounceDTO.getTitle().isBlank()) {
                 return ResponseEntity.badRequest().body("Título é obrigatório");
             }
 	        
